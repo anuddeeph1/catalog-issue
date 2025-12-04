@@ -9,8 +9,15 @@ spec:
       template:
         spec:
           containers:
-          - name: job
+          - name: job123
             image: busybox
             command: ["sh", "-c", "date; echo Hello"]
+            resources:
+              requests:
+                memory: "64Mi"
+                cpu: "50m"
+              limits:
+                memory: "128Mi"
+                cpu: "100m"
           restartPolicy: OnFailure
 
